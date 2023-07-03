@@ -1,0 +1,20 @@
+﻿@model Employees.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Employee</h2>
+<div class="alert alert-warning" role="alert">
+    <p>Are you sure you want to delete this employee?</p>
+    <hr />
+    <p><strong>Last Name: </strong>@Model.LastName</p>
+    <p><strong>Name: </strong>@Model.FirstName</p>
+</div>
+@using (Html.BeginForm())
+{
+    //Il campo ID è nascosto
+    @Html.HiddenFor(model => model.ID)
+    <input class="btn btn-dark btn-lg" type="submit" value="Confirm" />
+}
+
